@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>天堂电影院 下载-经典影片高清下载_中文字幕资源与观影指南</title>
+<meta name="description" content="天堂电影院 下载主题首页，围绕这部经典影片的版本选择、字幕信息、下载前须知与观影建议展开，帮助访问者理清获取高清资源的实际路径与判断依据。">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%231c1a2b'/%3E%3Ccircle cx='32' cy='30' r='12' fill='none' stroke='%23e8b04b' stroke-width='4'/%3E%3Cpath d='M26 22v16l14-8z' fill='%23e8b04b'/%3E%3Crect x='16' y='48' width='32' height='4' rx='2' fill='%23e8b04b' opacity='.6'/%3E%3C/svg%3E">
+<style>
+:root{
+  --ink:#1c1a2b;
+  --ink-soft:#3a3750;
+  --paper:#f7f3ea;
+  --paper-deep:#efe7d7;
+  --gold:#c08a2c;
+  --gold-bright:#e8b04b;
+  --line:rgba(28,26,43,.12);
+  --shadow:0 14px 38px rgba(28,26,43,.12);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:"Songti SC","Noto Serif SC","Source Han Serif SC",Georgia,serif;
+  background:var(--paper);
+  color:var(--ink);
+  line-height:1.8;
+  -webkit-font-smoothing:antialiased;
+}
+img,svg{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+.wrap{width:min(1120px,92vw);margin:0 auto}
+
+/* 顶部 */
+header.site{
+  position:sticky;top:0;z-index:50;
+  background:rgba(247,243,234,.92);
+  backdrop-filter:blur(10px);
+  border-bottom:1px solid var(--line);
+}
+.nav{
+  display:flex;align-items:center;justify-content:space-between;
+  gap:18px;padding:14px 0;
+}
+.logo{display:flex;align-items:center;gap:10px;font-weight:700;letter-spacing:.5px;font-size:1.02rem}
+.logo .mark{
+  width:38px;height:38px;border-radius:10px;background:var(--ink);
+  display:grid;place-items:center;flex:0 0 auto;
+}
+.nav ul{display:flex;gap:26px;list-style:none;font-family:"PingFang SC","Microsoft YaHei",sans-serif;font-size:.92rem}
+.nav ul a{color:var(--ink-soft);position:relative;padding:4px 0}
+.nav ul a:hover{color:var(--gold)}
+.nav ul a::after{
+  content:"";position:absolute;left:0;bottom:0;height:2px;width:0;
+  background:var(--gold-bright);transition:width .25s;
+}
+.nav ul a:hover::after{width:100%}
+.nav-cta{
+  font-family:"PingFang SC","Microsoft YaHei",sans-serif;
+  font-size:.88rem;padding:8px 18px;border-radius:999px;
+  background:var(--ink);color:#f7f3ea;border:1px solid var(--ink);
+  transition:.25s;
+}
+.nav-cta:hover{background:var(--gold);border-color:var(--gold);color:#fff}
+
+/* 首屏 */
+.hero{
+  position:relative;overflow:hidden;
+  padding:70px 0 60px;
+  background:
+    radial-gradient(circle at 82% 18%,rgba(232,176,75,.22),transparent 46%),
+    radial-gradient(circle at 8% 88%,rgba(28,26,43,.10),transparent 42%);
+}
+.hero-grid{
+  display:grid;grid-template-columns:1.15fr .85fr;gap:48px;align-items:center;
+}
+.eyebrow{
+  font-family:"PingFang SC","Microsoft YaHei",sans-serif;
+  font-size:.78rem;letter-spacing:.32em;color:var(--gold);
+  margin-bottom:16px;
+}
+h1{
+  font-size:clamp(1.9rem,4.4vw,3rem);
+  line-height:1.28;font-weight:800;letter-spacing:.5px;
+}
+.hero p.lead{
+  margin-top:20px;color:var(--ink-soft);font-size:1.02rem;max-width:34em;
+}
+.hero-actions{display:flex;flex-wrap:wrap;gap:14px;margin-top:30px}
+.btn{
+  display:inline-flex;align-items:center;gap:8px;
+  font-family:"PingFang SC","Microsoft YaHei",sans-serif;
+  font-size:.95rem;padding:13px 26px;border-radius:999px;
+  transition:.25s;border:1px solid transparent;
+}
+.btn-main{background:var(--ink);color:#f7f3ea}
+.btn-main:hover{background:var(--gold);}
+.btn-ghost{background:transparent;color:var(--ink);border-color:var(--line)}
+.btn-ghost:hover{border-color:var(--gold);color:var(--gold)}
+.btn[aria-disabled="true"]{opacity:.85;cursor:default}
+.hero-facts{
+  display:flex;gap:32px;margin-top:38px;flex-wrap:wrap;
+  font-family:"PingFang SC","Microsoft YaHei",sans-serif;
+}
+.hero-facts div strong{display:block;font-size:1.32rem;color:var(--gold);font-weight:700}
+.hero-facts div span{font-size:.82rem;color:var(--ink-soft);letter-spacing:.04em}
+
+/* 首屏插画 */
+.poster{
+  position:relative;border-radius:18px;overflow:hidden;
+  background:linear-gradient(160deg,#241f38,#14121f 70%);
+  box-shadow:var(--shadow);aspect-ratio:4/5;
+  border:1px solid rgba(232,176,75,.25);
+}
+.poster .beam{
+  position:absolute;inset:0;
+  background:conic-gradient(from 200deg at 50% 110%,transparent 0deg,rgba(232,176,75,.20) 30deg,transparent 62deg);
+}
+.poster svg{position:relative;width:100%;height:100%}
+.poster figcaption{
+  position:absolute;left:0;right:0;bottom:0;padding:16px 18px;
+  font-family:"PingFang SC","Microsoft YaHei",sans-serif;font-size:.78rem;
+  color:rgba(247,243,234,.72);letter-spacing:.08em;
+  background:linear-gradient(transparent,rgba(10,9,16,.8));
+}
+
+/* 通用区块 */
+section{padding:62px 0}
+.sec-head{margin-bottom:34px;max-width:44em}
+.sec-head .tag{
+  font-family:"PingFang SC","Microsoft YaHei",sans-serif;
+  font-size:.76rem;letter-spacing:.28em;color:var(--gold);margin-bottom:10px;
+}
+h2{font-size:clamp(1.35rem,2.6vw,1.75rem);font-weight:700;letter-spacing:.4px}
+.sec-head p{margin-top:12px;color:var(--ink-soft);font-size:.98rem}
+
+/* 版本表 */
+.versions{background:var(--paper-deep);border-radius:20px;padding:34px;box-shadow:inset 0 0 0 1px rgba(28,26,43,.06)}
+table{width:100%;border-collapse:collapse;font-family:"PingFang SC","Microsoft YaHei",sans-serif;font-size:.9rem}
+th,td{text-align:left;padding:14px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-weight:600;color:var(--ink);letter-spacing:.04em;background:rgba(255,255,255,.4)}
+td{color:var(--ink-soft)}
+tr:last-child td{border-bottom:none}
+td .hl{color:var(--ink);font-weight:600}
+
+/* 卡片 */
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.card{
+  background:#fffdf8;border:1px solid var(--line);border-radius:16px;
+  padding:26px 24px;transition:.28s;position:relative;
+}
+.card:hover{transform:translateY(-4px);box-shadow:var(--shadow);border-color:rgba(192,138,44,.4)}
+.card .ico{
+  width:44px;height:44px;border-radius:12px;display:grid;place-items:center;
+  background:rgba(232,176,75,.16);margin-bottom:16px;
+}
+.card h3{font-size:1.06rem;margin-bottom:10px;letter-spacing:.3px}
+.card p{font-size:.9rem;color:var(--ink-soft);line-height:1.75}
+
+/* 正文双栏 */
+.split{display:grid;grid-template-columns:1.2fr .8fr;gap:46px;align-items:start}
+.prose p{margin-bottom:16px;color:var(--ink-soft);font-size:.98rem}
+.prose p strong{color:var(--ink)}
+.prose h3{font-size:1.12rem;margin:26px 0 10px;color:var(--ink)}
+.aside{
+  background:var(--ink);color:#eae5da;border-radius:18px;padding:30px 28px;
+  font-family:"PingFang SC","Microsoft YaHei",sans-serif;
+}
+.aside h3{color:var(--gold-bright);font-size:1rem;margin-bottom:16px;letter-spacing:.08em}
+.aside ol{list-style:none;counter-reset:step}
+.aside ol li{
+  counter-increment:step;position:relative;padding-left:34px;
+  font-size:.88rem;line-height:1.7;margin-bottom:16px;color:rgba(234,229,218,.85);
+}
+.aside ol li::before{
+  content:counter(step,decimal-leading-zero);
+  position:absolute;left:0;top:0;color:var(--gold-bright);font-size:.82rem;font-weight:700;
+}
+
+/* 问答 */
+.faq{display:grid;gap:14px;max-width:56em}
+details{
+  background:#fffdf8;border:1px solid var(--line);border-radius:12px;
+  padding:18px 22px;transition:.25s;
+}
+details[open]{border-color:rgba(192,138,44,.45);box-shadow:0 8px 22px rgba(28,26,43,.07)}
+summary{
+  cursor:pointer;font-weight:600;font-size:.98rem;list-style:none;
+  display:flex;justify-content:space-between;gap:16px;align-items:center;
+}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";color:var(--gold);font-size:1.2rem;line-height:1;transition:.2s}
+details[open] summary::after{transform:rotate(45deg)}
+details p{margin-top:12px;font-size:.9rem;color:var(--ink-soft)}
+
+/* 收束 */
+.closing{
+  background:linear-gradient(135deg,#241f38,#14121f);
+  color:#eae5da;border-radius:22px;padding:52px 44px;
+  display:grid;grid-template-columns:1fr auto;gap:30px;align-items:center;
+}
+.closing h2{color:#fff}
+.closing p{margin-top:14px;color:rgba(234,229,218,.78);font-size:.96rem;max-width:40em}
+.closing .btn-main{background:var(--gold);color:#14121f}
+.closing .btn-main:hover{background:var(--gold-bright)}
+
+/* 页尾 */
+footer.site{border-top:1px solid var(--line);padding:40px 0 46px;margin-top:20px}
+.foot{display:flex;justify-content:space-between;gap:26px;flex-wrap:wrap;align-items:flex-start}
+.foot-brand{display:flex;gap:10px;align-items:center;font-weight:700;font-size:.98rem}
+.foot p{font-size:.82rem;color:var(--ink-soft);max-width:30em;line-height:1.8;margin-top:10px}
+.foot-links{display:flex;gap:22px;flex-wrap:wrap;font-family:"PingFang SC","Microsoft YaHei",sans-serif;font-size:.85rem}
+.foot-links a{color:var(--ink-soft)}
+.foot-links a:hover{color:var(--gold)}
+.copyright{
+  margin-top:30px;padding-top:20px;border-top:1px solid var(--line);
+  font-size:.78rem;color:rgba(58,55,80,.7);
+  font-family:"PingFang SC","Microsoft YaHei",sans-serif;
+  display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;
+}
+
+@media(max-width:900px){
+  .hero-grid,.split,.closing{grid-template-columns:1fr}
+  .cards{grid-template-columns:1fr 1fr}
+  .poster{aspect-ratio:16/10;order:-1}
+  .nav ul{display:none}
+  .closing{padding:38px 26px}
+}
+@media(max-width:620px){
+  .cards{grid-template-columns:1fr}
+  section{padding:46px 0}
+  .hero{padding:44px 0 40px}
+  .versions{padding:20px 16px;overflow-x:auto}
+  table{min-width:520px}
+  .hero-facts{gap:22px}
+  .nav-cta{display:none}
+  .foot{flex-direction:column}
+}
+</style>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body>
+
+<header class="site">
+  <div class="wrap nav">
+    <a href="#top" class="logo" aria-label="天堂电影院 下载 首页">
+      <span class="mark" aria-hidden="true">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+          <circle cx="12" cy="11" r="7" stroke="#e8b04b" stroke-width="1.8"/>
+          <path d="M9.5 8v6l5-3z" fill="#e8b04b"/>
+          <rect x="5" y="19.5" width="14" height="1.6" rx=".8" fill="#e8b04b" opacity=".55"/>
+        </svg>
+      </span>
+      天堂电影院 下载
+    </a>
+    <nav aria-label="主导航">
+      <ul>
+        <li><a href="#versions">版本对照</a></li>
+        <li><a href="#checklist">下载前须知</a></li>
+        <li><a href="#about">影片背景</a></li>
+        <li><a href="#faq">常见疑问</a></li>
+      </ul>
+    </nav>
+    <a class="nav-cta" href="#download">获取入口</a>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- 首屏 -->
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <p class="eyebrow">经典影片 · 版本与资源</p>
+        <h1>天堂电影院 下载</h1>
+        <p class="lead">
+          围绕《天堂电影院》的下载需求，本页把版本画质、字幕语言、文件体积与播放设备放在一起对照，
+          让“天堂电影院 下载”这件事从模糊的搜索行为，变成可以逐项确认的选择过程。
+        </p>
+        <div class="hero-actions">
+          <a class="btn btn-main" href="#versions">查看版本对照</a>
+          <a class="btn btn-ghost" href="#checklist">下载前先读</a>
+        </div>
+        <div class="hero-facts">
+          <div><strong>1988</strong><span>影片首映年份</span></div>
+          <div><strong>2 种</strong><span>常见剪辑版本</span></div>
+          <div><strong>多语</strong><span>字幕轨可切换</span></div>
+        </div>
+      </div>
+      <figure class="poster">
+        <div class="beam" aria-hidden="true"></div>
+        <svg viewBox="0 0 400 500" role="img" aria-label="老式放映机与光束的主题插画">
+          <defs>
+            <linearGradient id="g1" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0" stop-color="#e8b04b" stop-opacity=".9"/>
+              <stop offset="1" stop-color="#c08a2c" stop-opacity=".35"/>
+            </linearGradient>
+          </defs>
+          <circle cx="200" cy="190" r="86" fill="none" stroke="url(#g1)" stroke-width="2" opacity=".7"/>
+          <circle cx="200" cy="190" r="62" fill="none" stroke="url(#g1)" stroke-width="1.2" opacity=".45"/>
+          <circle cx="200" cy="190" r="34" fill="none" stroke="url(#g1)" stroke-width="3"/>
+          <path d="M188 172v36l30-18z" fill="#e8b04b"/>
+          <g stroke="#e8b04b" stroke-opacity=".35" stroke-width="1.4">
+            <line x1="200" y1="60" x2="200" y2="86"/>
+            <line x1="200" y1="294" x2="200" y2="320"/>
+            <line x1="70" y1="190" x2="96" y2="190"/>
+            <line x1="304" y1="190" x2="330" y2="190"/>
+          </g>
+          <rect x="96" y="356" width="208" height="14" rx="7" fill="#e8b04b" opacity=".25"/>
+          <rect x="120" y="382" width="160" height="8" rx="4" fill="#e8b04b" opacity=".16"/>
+          <rect x="146" y="402" width="108" height="6" rx="3" fill="#e8b04b" opacity=".12"/>
+        </svg>
+        <figcaption>主题插画 · 放映机与光束</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- 版本对照 -->
+  <section id="versions">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="tag">版本对照</p>
+        <h2>先分清版本，再谈天堂电影院 下载</h2>
+        <p>同一部影片存在不同剪辑长度与画质规格，确认版本是下载之前最值得花时间的一步。下表按常见规格归纳，仅供对照参考。</p>
+      </div>
+      <div class="versions">
+        <table>
+          <thead>
+            <tr>
+              <th scope="col">版本类型</th>
+              <th scope="col">时长与画幅</th>
+              <th scope="col">画质规格</th>
+              <th scope="col">适合场景</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><span class="hl">院线剪辑版</span></td>
+              <td>约两小时出头，宽银幕画幅</td>
+              <td>标准高清，文件体积较小</td>
+              <td>首次观看、移动设备播放</td>
+            </tr>
+            <tr>
+              <td><span class="hl">加长导演版</span></td>
+              <td>时长明显更长，含更多支线</td>
+              <td>高清或全高清，体积偏大</td>
+              <td>重温细节、收藏用途</td>
+            </tr>
+            <tr>
+              <td><span class="hl">修复重制版</span></td>
+              <td>与原版时长一致</td>
+              <td>画面颗粒与色彩经过整理</td>
+              <td>大屏电视、投影观看</td>
+            </tr>
+            <tr>
+              <td><span class="hl">压缩便携版</span></td>
+              <td>时长不变</td>
+              <td>体积优先，细节有所取舍</td>
+              <td>存储空间有限的设备</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- 下载前须知卡片 -->
+  <section id="checklist">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="tag">下载前须知</p>
+        <h2>三项容易被忽略的确认</h2>
+        <p>在天堂电影院 下载的过程中，字幕、来源与播放环境往往比文件大小更影响观感。</p>
+      </div>
+      <div class="cards">
+        <article class="card">
+          <div class="ico" aria-hidden="true">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#c08a2c" stroke-width="1.8">
+              <rect x="3" y="5" width="18" height="13" rx="2"/>
+              <path d="M7 21h10M12 18v3"/>
+            </svg>
+          </div>
+          <h3>字幕轨要先确认</h3>
+          <p>影片原声为意大利语，对白密度高、方言成分明显。下载前应确认文件是否内嵌中文字幕，或是否需要单独匹配字幕文件，避免出现时间轴错位。</p>
+        </article>
+        <article class="card">
+          <div class="ico" aria-hidden="true">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#c08a2c" stroke-width="1.8">
+              <path d="M12 3l8 4v5c0 5-3.5 8-8 9-4.5-1-8-4-8-9V7z"/>
+              <path d="M9 12l2 2 4-4"/>
+            </svg>
+          </div>
+          <h3>来源可靠性判断</h3>
+          <p>带有完整文件信息、清晰标注版本与编码格式的资源更便于核对。对于来源不明的天堂电影院 下载链接，建议先查看描述是否与上表规格一致，再决定是否保存。</p>
+        </article>
+        <article class="card">
+          <div class="ico" aria-hidden="true">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#c08a2c" stroke-width="1.8">
+              <rect x="2" y="6" width="20" height="12" rx="2"/>
+              <path d="M8 10v4M6 12h4M15 11h.01M18 13h.01"/>
+            </svg>
+          </div>
+          <h3>播放器兼容性</h3>
+          <p>高码率文件在老旧设备上可能卡顿，部分封装格式需要额外解码器。下载前确认播放器支持对应编码，能减少“下载完却放不动”的返工。</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- 正文与步骤 -->
+  <section id="about">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="tag">影片背景</p>
+        <h2>为什么这部影片值得认真挑一次资源</h2>
+      </div>
+      <div class="split">
+        <div class="prose">
+          <p>
+            《天堂电影院》由朱塞佩·托纳多雷执导，1988 年上映，讲述西西里小镇男孩与放映员之间的情谊，
+            以及电影如何伴随一代人成长。影片的时间跨度长，室内放映厅与广场场景交替出现，
+            对画面暗部层次和颗粒质感的要求较高，这也是许多人在<b>天堂电影院 下载</b>时更在意修复版本的原因。
+          </p>
+          <p>
+            影片的音乐由埃尼奥·莫里康内创作，旋律在多个段落反复出现，形成情绪线索。
+            对声音敏感的用户，在选择<b>天堂电影院 下载</b>资源时，可以优先考虑保留原始声道而非二次压缩音轨的版本，
+            这样配乐的层次会更完整。
+          </p>
+          <h3>加长版与院线版的取舍</h3>
+          <p>
+            加长版本补入了成年后回乡的更多情节，人物关系交代更充分，但节奏相对舒缓；
+            院线版结构更紧凑，适合第一次接触这部作品。两者并无优劣之分，
+            关键在于先明确自己是想补全细节，还是想先获得一次完整的叙事体验，再决定天堂电影院 下载的具体版本。
+          </p>
+          <h3>观看环境的影响</h3>
+          <p>
+            放映厅场景大量依赖低照度画面，用手机小屏观看容易丢失暗部细节。
+            如果条件允许，把<b>天堂电影院 下载</b>的文件放到电视或投影上播放，
+            小镇广场与放映窗口的画面会更有代入感。文件体积与播放设备的匹配，也应纳入选择考量。
+          </p>
+        </div>
+        <aside>
+          <h3>下载步骤参考</h3>
+          <ol>
+            <li>先确定要院线版还是加长版，避免重复保存。</li>
+            <li>核对文件信息中的时长、分辨率与编码格式。</li>
+            <li>确认字幕是否内嵌，或准备同版本的外挂字幕。</li>
+            <li>检查存储空间与播放设备是否匹配文件规格。</li>
+            <li>保存后先试播片段，确认音画同步正常。</li>
+          </ol>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <!-- 问答 -->
+  <section id="faq">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="tag">常见疑问</p>
+        <h2>关于天堂电影院 下载的几个问题</h2>
+        <p>以下回答基于影片本身的公开信息与常见使用场景，不涉及具体站点推荐。</p>
+      </div>
+      <div class="faq">
+        <details open>
+          <summary>两个版本可以只下载一个吗？</summary>
+          <p>可以。多数观众首次接触选择院线版即可，叙事完整；若已看过并希望补全支线，再考虑加长版本。分开保存能节省存储空间。</p>
+        </details>
+        <details>
+          <summary>字幕文件需要和版本严格对应吗？</summary>
+          <p>需要。不同剪辑版本的时间轴存在差异，字幕与版本不匹配会出现延迟或提前。下载字幕时应确认其标注对应的版本与帧率。</p>
+        </details>
+        <details>
+          <summary>为什么有的文件体积相差很大？</summary>
+          <p>差异主要来自分辨率、码率与音频轨道数量。体积大的文件通常保留更多画面细节，但也对设备解码能力提出更高要求。</p>
+        </details>
+        <details>
+          <summary>在手机上观看需要注意什么？</summary>
+          <p>小屏会削弱暗部场景的层次，建议调高屏幕亮度并在较暗环境中观看；同时优先选择体积适中的版本，减少加载等待。</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- 收束 -->
+  <section id="download">
+    <div class="wrap">
+      <div class="closing">
+        <div>
+          <h2>把选择做在前面</h2>
+          <p>
+            天堂电影院 下载的核心并不在于找到某个链接，而在于先确认版本、字幕与设备三者是否匹配。
+            按本页的对照表与步骤逐一核对，通常一次就能拿到适合自己观看环境的文件。
+          </p>
+        </div>
+        <a class="btn btn-main" href="#" data-download-placeholder="true" aria-disabled="true" tabindex="-1" style="pointer-events:none">下载</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <div class="foot">
+      <div>
+        <div class="foot-brand">
+          <span class="mark" aria-hidden="true" style="width:30px;height:30px;border-radius:8px;background:#1c1a2b;display:grid;place-items:center">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none">
+              <circle cx="12" cy="11" r="7" stroke="#e8b04b" stroke-width="1.8"/>
+              <path d="M9.5 8v6l5-3z" fill="#e8b04b"/>
+            </svg>
+          </span>
+          天堂电影院 下载
+        </div>
+        <p>围绕经典影片《天堂电影院》的版本信息、字幕说明与下载前确认事项，提供清晰的对照与判断依据。</p>
+      </div>
+      <nav class="foot-links" aria-label="页尾导航">
+        <a href="#versions">版本对照</a>
+        <a href="#checklist">下载前须知</a>
+        <a href="#about">影片背景</a>
+        <a href="#faq">常见疑问</a>
+        <a href="#top">回到顶部</a>
+      </nav>
+    </div>
+    <div class="copyright">
+      <span>内容以影片公开信息与常见使用场景为依据，具体资源以实际文件信息为准。</span>
+      <span>天堂电影院 下载 · 主题首页</span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
