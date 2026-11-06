@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>每日大赛主题大赛寸止挑战-寸止挑战赛制玩法_每日大赛主题挑战赛程与参与入口</title>
+<meta name="description" content="每日大赛主题大赛寸止挑战围绕每日更新的主题挑战赛展开，说明寸止挑战的玩法规则、主题轮换节奏、参与入口与积分记录方式，帮助访问者快速找到当日主题与历史挑战内容。">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23131826'/%3E%3Ccircle cx='32' cy='32' r='18' fill='none' stroke='%23ffb45c' stroke-width='4'/%3E%3Cpath d='M32 18v14l10 6' stroke='%23ffb45c' stroke-width='4' fill='none' stroke-linecap='round'/%3E%3C/svg%3E">
+<style>
+  :root{
+    --ink:#131826;
+    --ink-2:#1d2436;
+    --paper:#f6f3ec;
+    --paper-2:#ffffff;
+    --line:#e2ddd2;
+    --amber:#e08a2b;
+    --amber-soft:#ffb45c;
+    --muted:#6b6a63;
+    --radius:16px;
+  }
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;}
+  body{
+    background:var(--paper);
+    color:var(--ink);
+    font-family:"PingFang SC","Hiragino Sans GB","Microsoft YaHei",system-ui,-apple-system,"Segoe UI",sans-serif;
+    line-height:1.75;
+    font-size:16px;
+    -webkit-font-smoothing:antialiased;
+  }
+  a{color:inherit;}
+  .wrap{width:100%;max-width:1120px;margin:0 auto;padding:0 20px;}
+
+  /* header */
+  header.site{
+    position:sticky;top:0;z-index:20;
+    background:rgba(19,24,38,.96);
+    backdrop-filter:blur(6px);
+    color:#f3f0e9;
+    border-bottom:1px solid rgba(255,255,255,.08);
+  }
+  .bar{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:12px 0;flex-wrap:wrap;}
+  .brand{display:flex;align-items:center;gap:10px;text-decoration:none;min-width:0;}
+  .brand .mark{width:36px;height:36px;flex:0 0 36px;}
+  .brand .name{
+    font-size:15px;font-weight:700;letter-spacing:.2px;line-height:1.35;
+    white-space:normal;
+  }
+  nav.main ul{display:flex;gap:4px;list-style:none;margin:0;padding:0;flex-wrap:wrap;}
+  nav.main a{
+    display:inline-block;padding:6px 11px;border-radius:999px;
+    font-size:14px;text-decoration:none;color:#d8d3c7;
+    transition:background .18s,color .18s;
+  }
+  nav.main a:hover,nav.main a:focus-visible{background:rgba(255,180,92,.18);color:#fff;}
+
+  /* hero */
+  .hero{
+    background:
+      radial-gradient(1000px 420px at 82% -10%,rgba(224,138,43,.30),transparent 62%),
+      linear-gradient(180deg,#131826 0%,#1b2233 100%);
+    color:#f4f1ea;
+    padding:52px 0 46px;
+    border-bottom:1px solid rgba(255,255,255,.06);
+  }
+  .hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:36px;align-items:center;}
+  .kicker{
+    display:inline-flex;align-items:center;gap:8px;
+    font-size:13px;letter-spacing:.14em;color:var(--amber-soft);
+    border:1px solid rgba(255,180,92,.42);border-radius:999px;
+    padding:4px 12px;margin-bottom:18px;
+  }
+  h1{
+    font-size:clamp(26px,4.2vw,42px);
+    line-height:1.25;margin:0 0 16px;font-weight:800;letter-spacing:.5px;
+  }
+  .hero p.lead{margin:0 0 24px;color:#cfc9bd;font-size:16px;max-width:34em;}
+  .cta{display:flex;gap:12px;flex-wrap:wrap;}
+  .btn{
+    display:inline-block;text-decoration:none;font-size:15px;font-weight:600;
+    padding:11px 22px;border-radius:999px;border:1px solid transparent;
+    transition:transform .15s,background .18s,border-color .18s;
+  }
+  .btn-primary{background:var(--amber-soft);color:#20160a;}
+  .btn-primary:hover{background:#ffc57c;transform:translateY(-1px);}
+  .btn-ghost{border-color:rgba(255,255,255,.30);color:#f1eee7;}
+  .btn-ghost:hover{border-color:var(--amber-soft);color:#fff;}
+  .btn-ghost[aria-disabled="true"]{opacity:.55;pointer-events:none;}
+
+  .hero-card{
+    background:rgba(255,255,255,.05);
+    border:1px solid rgba(255,255,255,.12);
+    border-radius:var(--radius);
+    padding:20px 20px 16px;
+  }
+  .hero-card h2{font-size:14px;letter-spacing:.08em;color:var(--amber-soft);margin:0 0 12px;font-weight:600;}
+  .tick{list-style:none;margin:0;padding:0;font-size:14px;color:#ddd8cd;}
+  .tick li{display:flex;gap:10px;padding:7px 0;border-bottom:1px dashed rgba(255,255,255,.10);}
+  .tick li:last-child{border-bottom:0;}
+  .tick b{color:#fff;font-weight:600;flex:0 0 auto;}
+
+  /* sections */
+  section{padding:52px 0;}
+  section + section{padding-top:0;}
+  .sec-head{margin-bottom:26px;}
+  .sec-head .tag{font-size:12px;letter-spacing:.16em;color:var(--amber);font-weight:700;}
+  .sec-head h2{font-size:clamp(20px,2.6vw,26px);margin:6px 0 8px;font-weight:800;}
+  .sec-head p{margin:0;color:var(--muted);font-size:15px;max-width:46em;}
+
+  .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;}
+  .card{
+    background:var(--paper-2);border:1px solid var(--line);border-radius:var(--radius);
+    padding:22px;display:flex;flex-direction:column;gap:10px;
+  }
+  .card .ico{width:34px;height:34px;color:var(--amber);}
+  .card h3{margin:0;font-size:17px;font-weight:700;}
+  .card p{margin:0;font-size:14.5px;color:#4b4a44;}
+
+  .flow{
+    background:var(--paper-2);border:1px solid var(--line);border-radius:var(--radius);
+    padding:26px;
+  }
+  .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;counter-reset:st;}
+  .step{position:relative;padding-left:0;}
+  .step .num{
+    display:inline-flex;align-items:center;justify-content:center;
+    width:28px;height:28px;border-radius:50%;background:var(--ink);color:var(--amber-soft);
+    font-size:13px;font-weight:700;margin-bottom:10px;
+  }
+  .step h4{margin:0 0 4px;font-size:15px;}
+  .step p{margin:0;font-size:14px;color:var(--muted);}
+
+  .split{display:grid;grid-template-columns:1fr 1fr;gap:22px;align-items:start;}
+  .panel{
+    background:var(--paper-2);border:1px solid var(--line);border-radius:var(--radius);padding:24px;
+  }
+  .panel h3{margin:0 0 12px;font-size:18px;}
+  .panel p{margin:0 0 12px;font-size:15px;color:#3d3c37;}
+  .panel p:last-child{margin-bottom:0;}
+  .list{list-style:none;margin:0;padding:0;}
+  .list li{
+    display:flex;gap:12px;padding:11px 0;border-bottom:1px solid var(--line);font-size:15px;
+  }
+  .list li:last-child{border-bottom:0;}
+  .list .date{flex:0 0 84px;color:var(--amber);font-weight:700;font-size:13.5px;letter-spacing:.02em;}
+  .list .txt{color:#3d3c37;}
+
+  .rules{
+    background:linear-gradient(180deg,#1d2436,#131826);color:#e9e5db;
+    border-radius:var(--radius);padding:30px;border:1px solid rgba(255,255,255,.08);
+  }
+  .rules h3{margin:0 0 14px;font-size:19px;color:#fff;}
+  .rules ul{margin:0;padding-left:20px;font-size:15px;color:#cbc6ba;}
+  .rules li{margin-bottom:9px;}
+  .rules li b{color:var(--amber-soft);}
+
+  .dl{
+    display:grid;grid-template-columns:1.3fr .7fr;gap:22px;align-items:center;
+    background:var(--paper-2);border:1px solid var(--line);border-radius:var(--radius);padding:26px;
+  }
+  .dl h3{margin:0 0 8px;font-size:19px;}
+  .dl p{margin:0;font-size:14.5px;color:var(--muted);}
+  .btn-dl{
+    display:inline-block;text-align:center;text-decoration:none;font-weight:700;font-size:15px;
+    padding:12px 26px;border-radius:999px;background:var(--ink);color:var(--amber-soft);
+    border:1px solid var(--ink);
+  }
+  .btn-dl[aria-disabled="true"]{opacity:.6;pointer-events:none;}
+
+  footer.site{
+    background:#131826;color:#b9b4a8;padding:34px 0;border-top:1px solid rgba(255,255,255,.08);
+    font-size:13.5px;
+  }
+  footer.site .f-top{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;align-items:flex-start;}
+  footer.site .f-brand{color:#f2efe8;font-weight:700;font-size:14.5px;max-width:24em;line-height:1.6;}
+  footer.site nav{display:flex;gap:16px;flex-wrap:wrap;}
+  footer.site nav a{text-decoration:none;color:#b9b4a8;}
+  footer.site nav a:hover{color:var(--amber-soft);}
+  footer.site .f-note{margin-top:18px;padding-top:16px;border-top:1px solid rgba(255,255,255,.08);color:#8a857a;line-height:1.7;}
+
+  @media (max-width:900px){
+    .hero-grid{grid-template-columns:1fr;gap:26px;}
+    .grid-3{grid-template-columns:1fr 1fr;}
+    .steps{grid-template-columns:1fr 1fr;}
+    .split{grid-template-columns:1fr;}
+    .dl{grid-template-columns:1fr;}
+  }
+  @media (max-width:600px){
+    body{font-size:15.5px;}
+    .hero{padding:36px 0 32px;}
+    section{padding:38px 0;}
+    .grid-3{grid-template-columns:1fr;}
+    .steps{grid-template-columns:1fr;}
+    nav.main a{padding:5px 9px;font-size:13px;}
+    .brand .name{font-size:13.5px;}
+    .list .date{flex:0 0 72px;font-size:12.5px;}
+    .rules{padding:22px;}
+  }
+</style>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body>
+
+<header class="site">
+  <div class="wrap bar">
+    <a class="brand" href="#top">
+      <svg class="mark" viewBox="0 0 64 64" aria-hidden="true" focusable="false">
+        <rect width="64" height="64" rx="14" fill="#1d2436"/>
+        <circle cx="32" cy="32" r="18" fill="none" stroke="#ffb45c" stroke-width="4"/>
+        <path d="M32 18v14l10 6" stroke="#ffb45c" stroke-width="4" fill="none" stroke-linecap="round"/>
+        <circle cx="32" cy="32" r="3.4" fill="#ffb45c"/>
+      </svg>
+      <span class="name">每日大赛主题大赛寸止挑战</span>
+    </a>
+    <nav class="main" aria-label="主导航">
+      <ul>
+        <li><a href="#today">今日主题</a></li>
+        <li><a href="#rule">玩法规则</a></li>
+        <li><a href="#rounds">主题轮次</a></li>
+        <li><a href="#record">积分记录</a></li>
+        <li><a href="#join">参与入口</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <span class="kicker">每日主题 · 寸止玩法</span>
+        <h1>每日大赛主题大赛寸止挑战</h1>
+        <p class="lead">这里是每日大赛主题大赛寸止挑战的主题首页：每天发布一个挑战主题，参与者按寸止规则完成限时任务并记录成绩。页面集中说明当日主题、玩法要点、轮次安排与参与入口，方便第一次到访的人快速进入当天的挑战。</p>
+        <div class="cta">
+          <a class="btn btn-primary" href="#today">查看今日主题</a>
+          <a class="btn btn-ghost" href="#rule">了解寸止规则</a>
+        </div>
+      </div>
+      <aside class="hero-card" aria-label="今日挑战速览">
+        <h2>今日速览</h2>
+        <ul class="tick">
+          <li><b>主题</b><span>「单色静物」限时构图</span></li>
+          <li><b>规则</b><span>寸止计时，超时即止步</span></li>
+          <li><b>轮次</b><span>每天一轮，晚间结算</span></li>
+          <li><b>记录</b><span>成绩进入当期积分榜</span></li>
+        </ul>
+      </aside>
+    </div>
+  </section>
+
+  <section id="today">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="tag">今日主题</span>
+        <h2>每天一个主题，从主题出发再谈寸止</h2>
+        <p>每日大赛主题大赛寸止挑战的节奏是「先定主题，再定边界」。主题决定当天做什么，寸止规则决定做到什么程度停下，两者共同构成当天成绩的评判基础。</p>
+      </div>
+      <div class="grid-3">
+        <article class="card">
+          <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18M8 4v5"/></svg>
+          <h3>主题怎么定</h3>
+          <p>当日主题由主办方在前一日公布，通常是一个明确的表达方向，例如色调、材质、场景或动作限定。主题发布后不再更改，参与者围绕同一主题展开，保证横向可比。</p>
+        </article>
+        <article class="card">
+          <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><circle cx="12" cy="13" r="8"/><path d="M12 9v4l3 2M9 2h6"/></svg>
+          <h3>寸止怎么用</h3>
+          <p>寸止挑战强调「到点即停」。每个主题会给出明确的时间上限或数量上限，达到界限后必须停止继续操作，越界内容不计入成绩。这条边界是每日大赛主题大赛寸止挑战区别于普通主题创作的核心。</p>
+        </article>
+        <article class="card">
+          <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M4 19V5M4 19h16"/><path d="M8 15l4-5 3 3 4-6"/></svg>
+          <h3>成绩怎么看</h3>
+          <p>完成主题并遵守寸止边界的参与者，成绩按完成度与边界遵守情况记录。当期结束后公布积分榜，榜内数据只代表当期表现，不跨期累计。</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="rule">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="tag">玩法规则</span>
+        <h2>四步走完一次寸止挑战</h2>
+        <p>流程保持简单，目的是让参与者在几分钟内看懂并开始。以下四步覆盖从读题到提交的完整路径。</p>
+      </div>
+      <div class="flow">
+        <div class="steps">
+          <div class="step">
+            <span class="num">1</span>
+            <h4>读主题</h4>
+            <p>先看当日主题说明，确认限定方向与不允许出现的内容。</p>
+          </div>
+          <div class="step">
+            <span class="num">2</span>
+            <h4>确认边界</h4>
+            <p>记下寸止条件：时间上限、数量上限或操作次数上限。</p>
+          </div>
+          <div class="step">
+            <span class="num">3</span>
+            <h4>按规则完成</h4>
+            <p>在边界内完成主题内容，到达上限立即停止。</p>
+          </div>
+          <div class="step">
+            <span class="num">4</span>
+            <h4>提交记录</h4>
+            <p>提交结果与用时，系统按当期规则计入积分。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="rounds">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="tag">主题轮次</span>
+        <h2>近期主题轮次安排</h2>
+        <p>每日大赛主题大赛寸止挑战按日推进，每轮主题独立成篇。下表列出近期已公布的主题方向，供提前准备参考。</p>
+      </div>
+      <div class="split">
+        <div class="panel">
+          <h3>近期主题一览</h3>
+          <ul class="list">
+            <li><span class="date">第 1 日</span><span class="txt">单色静物 —— 限定单一色调，寸止条件为 10 分钟内完成。</span></li>
+            <li><span class="date">第 2 日</span><span class="txt">窗边光影 —— 以自然光为主光源，寸止条件为构图不超过 5 次调整。</span></li>
+            <li><span class="date">第 3 日</span><span class="txt">重复元素 —— 画面需出现成组重复物件，寸止条件为 8 分钟截止。</span></li>
+            <li><span class="date">第 4 日</span><span class="txt">一动一静 —— 动静对比，寸止条件为限定 3 个取景角度。</span></li>
+          </ul>
+        </div>
+        <div class="panel">
+          <h3>轮次时间表</h3>
+          <p>主题在前一日晚间公布，挑战窗口为次日全天，结算在当日结束后进行。窗口期内提交的内容才计入当期成绩。</p>
+          <p>若某日主题因故调整，调整说明会随当日主题一并发布，已公布的主题方向与寸止条件以发布版本为准。每日大赛主题大赛寸止挑战不设补赛，错过窗口即进入下一轮。</p>
+          <p>对于初次参与者，建议从第一日主题开始，先熟悉寸止边界的判定方式，再逐步提高完成效率。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="record">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="tag">积分记录</span>
+        <h2>成绩如何被记录与核对</h2>
+        <p>积分只用于反映当期参与情况，规则公开、口径统一，避免因理解差异产生争议。</p>
+      </div>
+      <div class="rules">
+        <h3>记分与核对要点</h3>
+        <ul>
+          <li><b>完成度</b>：是否完整覆盖当日主题的限定方向，偏离主题的部分不计分。</li>
+          <li><b>边界遵守</b>：是否在寸止条件内停止，超时或超量的部分单独标注，不并入得分。</li>
+          <li><b>提交时间</b>：以提交记录的服务器时间为准，窗口外提交不进入当期榜。</li>
+          <li><b>申诉窗口</b>：当期结算后开放短时申诉，逾期不再受理，结果以复核结论为准。</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="join">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="tag">参与入口</span>
+        <h2>从哪里开始今天的挑战</h2>
+        <p>先读当日主题，再确认寸止条件，最后提交记录。三步顺序不要颠倒，这是每日大赛主题大赛寸止挑战最省时的入场方式。</p>
+      </div>
+      <div class="split">
+        <div class="panel">
+          <h3>新手建议</h3>
+          <p>第一次参加时，把注意力放在「停」的时机上。主题内容做多少并不重要，重要的是在寸止条件到达时立刻停止，这既是规则要求，也是这项玩法的乐趣所在。</p>
+          <p>熟悉之后，可以尝试在更短时间内完成同等完成度的主题，用效率体现对主题与边界的双重把握。</p>
+        </div>
+        <div class="panel">
+          <h3>继续浏览</h3>
+          <ul class="list">
+            <li><span class="date">今日</span><span class="txt"><a href="#today">回到今日主题说明</a></span></li>
+            <li><span class="date">规则</span><span class="txt"><a href="#rule">重读寸止挑战四步流程</a></span></li>
+            <li><span class="date">轮次</span><span class="txt"><a href="#rounds">查看近期主题与时间表</a></span></li>
+            <li><span class="date">积分</span><span class="txt"><a href="#record">核对记分与申诉窗口</a></span></li>
+          </ul>
+        </div>
+      </div>
+      <div class="dl" style="margin-top:22px;">
+        <div>
+          <h3>主题素材包</h3>
+          <p>包含往期主题说明卡与寸止计时模板，方便离线准备。文件将在整理完成后开放获取。</p>
+        </div>
+        <div>
+          <a class="btn-dl" href="#" data-download-placeholder="true" aria-disabled="true" tabindex="-1">下载</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <div class="f-top">
+      <div class="f-brand">每日大赛主题大赛寸止挑战 · 每日主题发布与寸止规则说明</div>
+      <nav aria-label="页尾导航">
+        <a href="#today">今日主题</a>
+        <a href="#rule">玩法规则</a>
+        <a href="#rounds">主题轮次</a>
+        <a href="#record">积分记录</a>
+        <a href="#join">参与入口</a>
+      </nav>
+    </div>
+    <p class="f-note">本站内容围绕每日大赛主题大赛寸止挑战整理，主题方向、寸止条件与轮次安排均以当期发布版本为准。页面中的成绩说明仅描述记录口径，不构成任何收益承诺。</p>
+  </div>
+</footer>
+
+</body>
+</html>
